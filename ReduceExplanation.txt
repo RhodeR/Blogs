@@ -1,4 +1,0 @@
-You probably have once read about the reduce function on MDN webdocs. 
-When you saw the syntax of reduce: 'arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])' tears came out of your eyes.
-
-The good news: it's           
