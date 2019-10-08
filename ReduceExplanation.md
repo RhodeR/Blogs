@@ -1,5 +1,9 @@
 ## The basics
-You probably have once read about the reduce function, when you saw the syntax of reduce: 'arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])'. A tear came out of your eye. Don't worry; you are not the only one, who did not understand this immediately. The good news: it's way easier than it looks. It's just a simple for loop with some syntactic sugar to make your life easier. So take a look at the for loop underneath; A loop over every value of the array. Where each value of the array is saved in the variable 'memory'.
+You probably have once read about the reduce function, when you saw the syntax of reduce:
+
+**'arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])'.**
+
+ A tear came out of your eye. Don't worry; you are not the only one, who did not understand this immediately. The good news: it's way easier than it looks. Take a look at the for loop underneath; A loop over every value of the array. Where each value of the array is saved in the variable 'memory'.
 
 
 ```javascript
@@ -13,13 +17,13 @@ memory = memory + myArray[i]
 console.log(memory) // => 20 
 ```
 
-The reduce function underneath does exactly the same as the former for loop, only in one line! 
-The memory (accumulator) variable in the reduce function has the same 
+With the reduce function underneath you can get the same thing done, only in one line! The 'myArray[i]' variable  in the for loop is comparable with the 'arrayVal' of the reduce function. The memory variable in the for loop is comparable with the memory variable in the reduce function. Unfortunately they chose the abstract and freightening word 'accumulator' for this thing.    
+
 
 ```javascript
 const myArray = [2,3,4,5,6]
 
-let reduced=myArray.reduce((memory, arrayVal) => { arrayVal > memory ? arrayVal : memory });
+let reduced=myArray.reduce((memory, arrayVal) => arrayVal + memory );
 
 console.log(reduced); // => 20
 ```
