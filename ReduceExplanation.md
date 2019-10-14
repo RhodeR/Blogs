@@ -29,7 +29,7 @@ let reduced=myArray.reduce((count, arrayVal) => arrayVal + count );
 //reduced = 20
 ```
 
-The results of both snippets are the same, but when you take a closer look you'll see that there are some differences. The initial value of the count/accumulator variable of the reduce function is the value in myArray[0]. The callback function is not executed for myArray[0], you'll see that when you put a console.log in the callback function. ArrayVal 2 is never logged. However in this example above the reduced funtion will give the right/expected outcome because we are adding the arrayVal on the count val. However there are lots of examples this is not the case. Take a look at the snippet underneath. 
+The results of both snippets are the same, but there are some important differences. Look at the snippet underneath. 
 
 ```javascript
 const myArray = [2,3,4]
@@ -40,7 +40,10 @@ let reduced= myArray.reduce((count, arrayVal) => count + arrayVal * 3);
  // => reduced=23
 ```
 
-What? What happened? The mathematicians noticed immedeately: 'This isn't right'. When you take a look at the callback function this is what you expected:  (2 * 3) + (3 * 3) + (4 * 3) = 27. But the outcome is 23... I want more alcohol... Here you see very clearly that the callback function isn't executed for the fist value in the array, as I said earlier, it only takes that first arrayValue as the initial value, thereby the calculation is: 2 + (3 * 3)  + (4 * 3). 
+What? What happened? The mathematicians noticed immedeately: 'This isn't right'. When you take a look at the callback function this is what you expected:<br>  2 * 3 = 6 <br> (6 + 3 * 3 = 15) <br>  15 + (4 * 3) = 27. <br> <br>
+But value of the variable 'reduced' = 23... Why?? When I first saw this I needed even more alcohol... Here you see very clearly that the callback function isn't executed for the first value in the array. The reduce function takes that first arrayValue as the initial value, which gives the following calculation: 
+<br> 2 + 3 * 3 = 11 <br>
+11 + 4 * 3 = 23<br> <br>
 
 Okay.. fine, when I really have to accept that for the first arrayValue the callback function is not executed, I will accept it. But sometimes you want the callback function to be executed for **every** value in the array. 
 
@@ -59,7 +62,7 @@ let reduced= myArray.reduce((count, arrayVal) => arrayVal * 3, 0);
  // => reduced=27
 ```
 
-See what is changed? In the code above I added a 0 after the callback function. Now the callback function is invoked three times as you would expect. <br>
+See what is changed? In the code above I added a 0 after the callback function; the initialValue. Now the callback function is invoked three times as you would expect. <br>
 0 + 3 * 2 =6 <br>
 6 + 3 * 3 = 15 <br> 
 15 + 4 * 3= 27 
@@ -85,10 +88,12 @@ Summary
 - When you want the callback function to execute for every value in the array and you want the reduce function to start with a specific value: use the initial value of the reduce. 
 - Use index when you need different calculations for some values in the array
 
+Bonus: Figure out why the first example doesnt need an initial value.
+
 
 When to use reduce?
-
-
+For example with an array of numbers: Calculating the sum, the highest value or the average value of the array. 
+With an array of strings it could be very handy when you need to find the longest word. 
 
 
 
