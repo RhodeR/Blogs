@@ -1,18 +1,19 @@
 
 ## What is reduce and why should I use it?
-Reduce iterates over each value of an array, and reduces it to a single value, which could be an object or primitive. 
-There are lots of usecases where reduce comes in handy, for example when you need to: 
-- find the average of your array
-- find the biggest number of your array
-- find the longest word of your array
-- know how many items of each item are present in your array. 
+Reduce iterates over each value of an array, and reduces it to a single value, which could be anything. 
+There are lots of use cases where reduce comes in handy, for example when you need to: 
+- calculate the sum of your array
+- calculate  the average of your array
+- calculate  the biggest number of your array
+- calculate  the longest word of your array
+- count how many times each item is present in the array. 
 
 ## The basics
 You might be familiar with the reduce syntax from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce#Syntax):
 
 `arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])`
 
- A tear came out of your eye and you even might consider switching careers. Don't worry; you are not the only one who didn't understand the syntax immediately. The good news: it's way easier than it looks. With the reduce function you can get the same thing done as with the good old for-loop, only in one line! Also, with a for-loop data is mutated or side effects are introduced. Reduce is born from adopting functional programming, so no side effects and mutations of the original data. Take a look at the for-loop and the reduce function in the snippets below, where we add up each value of the array.  The `myArray[i]` variable in the for loop is comparable with the `arrayVal` of the reduce function, it's that easy. The count variable in the for-loop is comparable with the accumulator variable in the reduce function. The accumulator accumulates the returned values of the callback functions. 
+ A tear came out of your eye and you even might consider switching careers. Don't worry; you are not the only one who didn't understand the syntax immediately. The good news: it's way easier than it looks. With the reduce function you can get the same thing done as with the good old for-loop, only in one line! Also, with a for-loop data is mutated or side effects are introduced. Reduce is born from adopting functional programming, so no side effects and mutations of the original data. Take a look at the for-loop and the reduce function in the snippets below, where we add up each value of the array.  The `myArray[i]` variable in the for loop is comparable with the `arrayVal` of the reduce function. The count variable in the for-loop example underneath is comparable with the accumulator variable in the reduce function. The accumulator accumulates the returned values of the callback functions. 
  
  
 ```javascript
